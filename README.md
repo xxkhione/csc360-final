@@ -1,2 +1,2 @@
-# csc330-final
-CSC330 Software Design Principles Final
+# csc360-final
+CSC360 Software Design Principles Final
