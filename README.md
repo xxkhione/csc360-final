@@ -13,13 +13,13 @@ Both projects are configured for `Debug` and `Release` build configurations targ
 
 ## Prerequisites
 
-- [Visual Studio 2022](navigational_search:Visual Studio) (or later) with .NET desktop development workload installed.
+- [Visual Studio 2022] (or later) with .NET desktop development workload installed.
 - .NET SDK compatible with Visual Studio 17.5.2. 
 
 ## Getting Started
 
 1. Clone or download this repository.
-2. Open `damiasargent_mastermind.sln` in [Visual Studio](navigational_search:Visual Studio).
+2. Open `damiasargent_mastermind.sln` in [Visual Studio].
 3. Set the `MasterMind` project as the startup project.
 4. Build the solution in either `Debug` or `Release` configuration.
 5. Run the project (F5) to start the game.
