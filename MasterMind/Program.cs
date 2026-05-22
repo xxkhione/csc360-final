@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MasterMindLibrary;
+using MasterMindLibrary.Strategies;
 
 
 namespace MasterMind
@@ -50,6 +51,9 @@ namespace MasterMind
 
             List<int> answer = MMLib.GenerateAnswer(maxPegs);
 
+            IGuessEvaluationStrategy guessEvaluationStrategy = new StandardGuessEvaluationStrategy();
+            MasterMindEngine engine = new MasterMindEngine(guessEvaluationStrategy);
+
             //show cheat? 
             //MMLib.Cheat(answer, pegList);
 
@@ -57,7 +61,7 @@ namespace MasterMind
             do
             {
                 Attempt userAttempt = GetAttemptFromUser(maxPegs, allAttempts, maxTurns);
-                CheckAttempt(userAttempt, answer);
+                engine.EvaluateAttempt(answer, userAttempt);
                 allAttempts.Add(userAttempt);
                 gameWon = userAttempt.CorrectAnswerCount == maxPegs;
                 maxTurns--;
@@ -96,18 +100,6 @@ namespace MasterMind
             MMLib.ShowAttempts(allAttempts, pegList, "x");
             MMLib.ShowChosenPegs(userAttempt, pegList);
             return userAttempt;
-        }
-
-
-        static void CheckAttempt(Attempt attempt, List<int> answer)
-        {
-            for(int i = 0; i < attempt.AttemptList.Count; i++)
-            {
-                if (attempt.AttemptList[i] == answer[i])
-                {
-                    attempt.CorrectAnswerCount++;
-                }
-            }
         }
     }
 }
