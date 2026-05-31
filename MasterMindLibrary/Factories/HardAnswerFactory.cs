@@ -1,8 +1,12 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace MasterMindLibrary.Factories
 {
     public class HardAnswerFactory : IAnswerGenerator
     {
-        public list<int> GenerateAnswer()
+        public List<int> GenerateAnswer()
         {
             List<int> answer = new List<int>();
 

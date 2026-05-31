@@ -36,7 +36,7 @@ namespace MasterMind
             int maxTurns = MMLib.GetConsoleInt("How many turns would you like? (Max is 25 turns) ", 1, 25);
             Console.ResetColor();
 
-            CodeFactory factory;
+            CodeFactory factory = null;
             switch(difficulty)
             {
                 case 1:
@@ -52,6 +52,7 @@ namespace MasterMind
 
             IAnswerGenerator generator = factory.CreateGenerator();
             List<int> answer = generator.GenerateAnswer();
+            int maxPegs = answer.Count;
 
             IGuessEvaluationStrategy guessEvaluationStrategy = new StandardGuessEvaluationStrategy();
             MasterMindEngine engine = new MasterMindEngine(guessEvaluationStrategy);

@@ -4,7 +4,7 @@ namespace MasterMindLibrary.Factories
     {
         public override IAnswerGenerator CreateGenerator()
         {
-            return new HardAnswerGenerator();
+            return new HardAnswerFactory();
         }
     }
 }
