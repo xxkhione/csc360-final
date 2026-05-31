@@ -64,7 +64,7 @@ namespace MasterMind
             do
             {
                 Attempt userAttempt = GetAttemptFromUser(maxPegs, allAttempts, maxTurns);
-                string evaluation = engine.EvaluateAttempt(answer, userAttempt);
+                engine.EvaluateAttempt(answer, userAttempt);
                 allAttempts.Add(userAttempt);
                 gameWon = userAttempt.CorrectAnswerCount == maxPegs;
                 maxTurns--;
