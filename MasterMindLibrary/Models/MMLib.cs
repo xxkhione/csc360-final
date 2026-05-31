@@ -7,26 +7,6 @@ namespace MasterMindLibrary
 {
     public static class MMLib
     {
-
-        /// <summary>
-        /// Creates an answer for this game that the user has to guess.
-        /// </summary>
-        /// <param name="maxPieces">Number of pegs in this game</param>
-        /// <returns>Array with the chosen number of pegs mixed up.</returns>
-        public static List<int> GenerateAnswer(int maxPegs)
-        {
-            List<int> answer = new List<int>();
-
-            for (int pieces = 0; pieces < maxPegs; pieces++)
-            {
-                answer.Add(pieces);
-            }
-
-            //Randomly sort them 
-            Random random = new Random();
-            return answer.OrderBy(item => random.Next()).ToList();
-        }
-
         /// <summary>
         /// Displays the attempts the user has made up to this point.
         /// </summary>
