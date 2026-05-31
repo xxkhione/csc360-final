@@ -20,7 +20,8 @@ namespace MasterMindLibrary.Strategies
                     correctColor++;
                 }
             }
-
+            attempt.CorrectAnswerCount = correctPosition;
+            
             return $"{correctPosition} correct position(s), {correctColor} correct color(s)";
         }
     }
